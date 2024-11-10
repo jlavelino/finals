@@ -26,7 +26,7 @@ function onClick() {
         <v-container>
           <v-row>
             <v-col cols="12" md="6" class="mx-auto py-10">
-              <v-card class="mx-auto" prepend-icon="mdi-login" subtitle="Login Form">
+              <v-card class="mx-auto" prepend-icon="mdi-account-plus" subtitle="Registration Form">
                 <template v-slot:title>
                   <span class="font-weight-black">AcaTrail</span>
                 </template>
@@ -34,10 +34,17 @@ function onClick() {
                 <v-card-text class="bg-surface-light pt-4">
                   <v-sheet class="mx-auto" width="300">
                     <v-form fast-fail @submit.prevent>
-                      <v-text-field label="Email" variant="outlined"></v-text-field>
-
+                      <v-text-field label="Firstname" variant="outlined"></v-text-field>
+                      <v-text-field label="Lastname" variant="outlined"></v-text-field>
+                      <v-text-field label="E-mail" variant="outlined"></v-text-field>
                       <v-text-field
                         label="Password"
+                        type="password"
+                        variant="outlined"
+                      ></v-text-field>
+
+                      <v-text-field
+                        label="Password Confirmation"
                         type="password"
                         variant="outlined"
                       ></v-text-field>
@@ -47,16 +54,16 @@ function onClick() {
                         type="submit"
                         block
                         color="primary"
-                        prepend-icon="mdi-login"
+                        prepend-icon="mdi-account-plus"
                         >Submit</v-btn
                       >
+                      <v-divider></v-divider>
+                      <h5 class="text-center my-3">
+                        Already have account? Click here to
+                        <RouterLink to="/">Login</RouterLink>
+                      </h5>
                     </v-form>
                   </v-sheet>
-                  <v-divider></v-divider>
-                  <h5 class="text-center my-3">
-                    Don't have account? Click here to
-                    <RouterLink to="/register">Register</RouterLink>
-                  </h5>
                 </v-card-text>
               </v-card>
             </v-col>
